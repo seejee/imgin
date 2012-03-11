@@ -42,8 +42,12 @@ group :assets do
   gem 'compass-h5bp'
 end
 
+###############
+#    Test     #
+###############
+#
 group 'test' do
-  gem 'minitest',           '~> 2.11.2'
+  gem 'rspec-rails'
   gem 'capybara',           '~> 1.1.1'
   gem 'factory_girl_rails'
   gem 'colorific'
@@ -53,4 +57,6 @@ end
 group :production do
   gem 'exception_notification'
 end
+
+
 
