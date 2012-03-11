@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+
+  def new
+    redirect_to '/auth/github'
+  end
+
   def create
     user = User.find_or_create_from_omni_auth(omni_auth)
     session[:user_id] = user.id
@@ -7,6 +12,11 @@ class SessionsController < ApplicationController
 
   def failure
     redirect_to root_url, :notice => "Login failure"
+  end
+
+  def destroy
+    session[:user_id] = nil 
+    redirect_to root_url, :notice => "Logged out"
   end
 
   private
