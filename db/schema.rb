@@ -22,4 +22,6 @@ ActiveRecord::Schema.define(:version => 20120311191819) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "users", ["github_uid"], :name => "index_users_on_github_uid", :unique => true
+
 end
