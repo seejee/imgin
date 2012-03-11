@@ -6,9 +6,9 @@ describe User do
 
   context "when finding or creating via omni auth" do
   
+    let(:omni_auth) { build_omni_auth }
+
     context "when a user does not exist exist with that github uid" do
-      let(:omni_auth) { build_omni_auth }
-      
       subject         { User.find_or_create_from_omni_auth(omni_auth) }
 
       its(:id)         { should_not == nil }
@@ -18,6 +18,16 @@ describe User do
       its(:github_uid) { should == "17" }
     end
 
+    context "when a user does not exist exist with that github uid" do
+
+      before(:each) do
+        User.find_or_create_from_omni_auth(omni_auth)
+      end
+        
+      subject   { User.find_or_create_from_omni_auth(omni_auth) }
+
+      its(:github_uid) { should == "17" }
+    end
   end
 end
 
