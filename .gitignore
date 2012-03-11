@@ -13,4 +13,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-config/database.ymlconfig/initializers/omniauth.rbsecret_token.rb
+config/database.yml
+config/initializers/omniauth.rb
+secret_token.rb
