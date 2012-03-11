@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def create
-    raise omni_auth.to_yaml
     user = User.find_or_create_from_omni_auth(omni_auth)
     session[:user_id] = user.id
     redirect_to root_url, :notice => "Login succeeded"
