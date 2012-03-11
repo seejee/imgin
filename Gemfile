@@ -18,9 +18,11 @@ gem 'pg'
 ################
 
 gem 'haml'
+gem 'haml-rails'
 gem 'sass'
 gem 'will_paginate', '~> 3.0'
 gem 'jquery-rails'
+gem 'html5-rails'
 
 gem 'draper'
 gem 'rainbow'
@@ -36,6 +38,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.0'
   gem 'uglifier'
   gem 'compass',      '~> 0.12.rc.1'
+  gem 'compass-rails'
+  gem 'compass-h5bp'
 end
 
 group 'test' do
