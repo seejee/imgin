@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
     }
 
     user = find_by_github_uid(args[:github_uid])
-    user || create!(args)
+    user || create(args)
   end
 end

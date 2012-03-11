@@ -6,17 +6,25 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_or_create_from_omni_auth(omni_auth)
-    session[:user_id] = user.id
-    redirect_to root_url, :notice => "Login succeeded"
+
+   if user.errors.any?
+      flash[:error] = user.errors.full_messages.join(", ")
+    else
+      self.current_user = user
+    end
+
+    redirect_back_or_default root_path
   end
 
   def failure
-    redirect_to root_url, :notice => "Login failure"
+    flash[:error] = "There was a problem logging in. Please try again"
+    self.current_user = nil
+    redirect_to root_url
   end
 
   def destroy
-    session[:user_id] = nil 
-    redirect_to root_url, :notice => "Logged out"
+    self.current_user = nil
+    redirect_to root_url
   end
 
   private
