@@ -1,1 +1,4 @@
-=link_to "Github", "/auth/github"
+- if current_user == nil 
+  =link_to "Github", login_path 
+- else
+  =link_to "Sign out", logout_path

@@ -31,7 +31,6 @@ describe SessionsController do
         response.should redirect_to(root_url)
       end
     end
-
   end
 
   context "when logging out" do
