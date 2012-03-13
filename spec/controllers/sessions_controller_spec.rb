@@ -1,20 +1,15 @@
 require "spec_helper"
 
-class FakeUser
-  def id 
-    42
-  end
-end
-
 describe SessionsController do
 
   context "when receiving an omniauth callback" do
-    let(:omni_auth) { Hash.new }
-    let(:user)      { FakeUser.new }
+    let(:omni_auth) { stub }
+    let(:user)      { stub }
 
     before(:each) do
       subject.stub(:omni_auth) { omni_auth }
       User.stub(:find_or_create_from_omni_auth).with(omni_auth) { user }
+      user.stub(:id) { 42 } 
     end
 
     context "when there are no errors" do
