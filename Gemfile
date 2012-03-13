@@ -7,7 +7,7 @@ source 'http://rubygems.org'
 gem 'rails',           '~> 3.2.0'
 gem 'omniauth-github', '~> 1.0.0'
 gem "rmagick"
-gem "carrierwave"
+gem "carrierwave", :git => 'git://github.com/jnicklas/carrierwave.git', :branch => "0.5-stable"
 
 ########
 # Data #
