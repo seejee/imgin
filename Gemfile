@@ -52,8 +52,6 @@ group 'test' do
   gem 'rspec-rails'
   gem 'capybara',           '~> 1.1.1'
   gem 'factory_girl_rails'
-  gem 'colorific'
-  gem 'test_notifier'
 end
 
 group :production do
