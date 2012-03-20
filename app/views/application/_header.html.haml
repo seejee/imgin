@@ -1,14 +1,12 @@
-.navbar.navbar-fixed-top
-  .navbar-inner
-    .container
-      %a.brand Imgin
-      .nav-collapse
-      %ul.nav
-        %li
-          %a
-            About
-        %li
-          - if current_user == nil 
-            =link_to "Github", login_path 
-          - else
-            =link_to "Sign out", logout_path
+.navbar
+  %a.brand Imgin
+  .nav
+    %ul
+      %li
+        %a
+          About
+      %li
+        - if current_user == nil 
+          =link_to "Github", login_path 
+        - else
+          =link_to "Sign out", logout_path
