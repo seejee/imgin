@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+
+  before_filter :login_required
   helper_method :current_user, :signed_in?
 
   private
@@ -10,6 +12,17 @@ class ApplicationController < ActionController::Base
 
   def signed_in?
     !!current_user
+  end
+
+  def login_path
+    Rails.env.production? ? '/auth/github' : '/auth/developer'
+  end
+
+  def login_required
+    unless signed_in?
+      redirect_to login_path
+      return true
+    end
   end
 
   def current_user=(user)

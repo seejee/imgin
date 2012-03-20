@@ -1,7 +1,9 @@
 class SessionsController < ApplicationController
 
+  skip_before_filter :login_required
+
   def new
-    redirect_to '/auth/github'
+    redirect_to login_path 
   end
 
   def create
@@ -13,7 +15,7 @@ class SessionsController < ApplicationController
       self.current_user = user
     end
 
-    redirect_back_or_default root_path
+    redirect_back_or_default user
   end
 
   def failure

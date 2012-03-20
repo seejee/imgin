@@ -4,17 +4,16 @@ describe SessionsController do
 
   context "when receiving an omniauth callback" do
     let(:omni_auth) { stub }
-    let(:user)      { stub }
+    let(:user)      { User.new }
 
     before(:each) do
       subject.stub(:omni_auth) { omni_auth }
+      user.stub(:id)           { 42 }
       User.stub(:find_or_create_from_omni_auth).with(omni_auth) { user }
-      user.stub(:id) { 42 } 
     end
 
     context "when there are no errors" do
       before(:each) do
-        user.stub(:errors) { [] }
         post :create
       end
 
@@ -23,7 +22,7 @@ describe SessionsController do
       end
 
       it "should redirect to the root url" do
-        response.should redirect_to(root_url)
+        response.should redirect_to user
       end
     end
   end
