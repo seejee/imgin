@@ -7,4 +7,5 @@ Imgin::Application.routes.draw do
   match "/auth/failure",            :to => "sessions#failure"
 
   match "/dashboard", :to => "dashboard#index"
+  resources :images
 end

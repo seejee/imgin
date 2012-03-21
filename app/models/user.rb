@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :image
+  has_many :images
 
   def self.find_or_create_from_omni_auth(omni_auth)
     args = {
