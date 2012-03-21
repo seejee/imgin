@@ -1,7 +1,9 @@
 %h3 Images
 
 - @images.each do |i|
-  = i.description
+  = link_to i.description, i.filename.url
+  = image_tag i.filename.url(:thumb)
+  %br
 
 %h4 Upload New File
 
