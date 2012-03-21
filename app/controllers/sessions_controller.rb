@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       self.current_user = user
     end
 
-    redirect_back_or_default user
+    redirect_back_or_default root_url
   end
 
   def failure

@@ -22,7 +22,7 @@ describe SessionsController do
       end
 
       it "should redirect to the root url" do
-        response.should redirect_to user
+        response.should redirect_to root_url
       end
     end
   end
