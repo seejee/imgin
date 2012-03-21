@@ -6,5 +6,5 @@ Imgin::Application.routes.draw do
   match "/auth/:provider/callback", :to => "sessions#create"
   match "/auth/failure",            :to => "sessions#failure"
 
-  resources :users
+  match "/dashboard", :to => "dashboard#index"
 end
