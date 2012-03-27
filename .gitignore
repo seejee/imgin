@@ -17,4 +17,4 @@ config/database.yml
 config/initializers/omniauth.rb
 secret_token.rb
 
-/public/upload
+/public/uploads

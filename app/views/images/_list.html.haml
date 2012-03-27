@@ -1,4 +1,6 @@
-- @images.each do |i|
-  = link_to i.description, i.file.url
-  = image_tag i.file.url(:thumb)
-  %br
+.image-list
+  %h3 Images
+  - @images.each do |i|
+    .image
+      = image_tag i.file.url(:thumb)
+      = link_to i.description, i.file.url

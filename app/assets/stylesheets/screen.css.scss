@@ -6,34 +6,85 @@
 
 .container {
   @include container;
-  @include susy-grid-background;
-  border: 1px solid black;
+  //@include susy-grid-background;
+  font: normal 1em/1.5 Georgia, serif;
 }
 
-h1 {
-  @include full;
-  @include prefix(3);
+.fixed-top {
 }
 
 .nav {
-  @include columns(3);
-  @include alpha;
+  background: #444;
+  padding: 1.5em 0;
+  margin: auto;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.shadow {
+  background: transparent url(http://static.tumblr.com/eth9fj1/SITklre6t/header-shadow.png) repeat-x top;
+  height: 24px;
+  bottom: -24px;
 }
 
 .brand {
-  clear: both;
-  font-size: 18pt;
+  font-size: 3em;
 }
 
 .nav-items {
+  margin: 10px 0px 10px 0px;
   list-style: none;
   float: right;
 
   li {
+    padding-top: 0;
+    margin-right: 10px;
+    display: inline;
   }
 }
 
 #main {
-  @include prefix(3);
+  @include columns(6);
+  width: 100%;
+
+  .image-list {
+    @include columns(4,6);
+    max-width: 90%;
+    max-width: 100%;
+  }
+
+  .upload {
+    @include columns(2,6);
+    @include omega(6);
+    float: right;
+  }
+}
+
+.image {
+  display: block;
+    float: left;
+    width: 110px;
+    height: 110px;
+    border: 1px solid #999;
+    margin: 0px 10px 10px 0px;
+    padding: 10px;
+
+  a {
+    align: center;
+    clear: both;
+  }
+
+  img {
+    max-width: 100px;
+    max-height: 100px;
+    clear: both;
+  }
+}
+
+footer {
   @include full;
+  text-align: center;
 }

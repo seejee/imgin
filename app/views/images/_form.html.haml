@@ -1,15 +1,18 @@
-= form_for @image, html: {multipart: true} do |f|
-  = f.hidden_field :user_id
+.upload
+  %p Upload New File
 
-  %p
-    = f.label        :description, "Description"
-    %br
-    = f.text_field   :description
+  = form_for @image, html: {multipart: true} do |f|
+    = f.hidden_field :user_id
 
-  %p
-    = f.label        :file, "File"
-    %br
-    = f.file_field   :file
+    %p
+      = f.label        :description, "Description"
+      %br
+      = f.text_field   :description
 
-  %p
-    = f.submit
+    %p
+      = f.label        :file, "File"
+      %br
+      = f.file_field   :file
+
+    %p
+      = f.submit
