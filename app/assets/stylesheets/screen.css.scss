@@ -1,0 +1,39 @@
+// Imports -------------------------------------------------------------------
+
+@import "base";
+
+/* Layout ------------------------------------------------------------------*/
+
+.container {
+  @include container;
+  @include susy-grid-background;
+  border: 1px solid black;
+}
+
+h1 {
+  @include full;
+  @include prefix(3);
+}
+
+.nav {
+  @include columns(3);
+  @include alpha;
+}
+
+.brand {
+  clear: both;
+  font-size: 18pt;
+}
+
+.nav-items {
+  list-style: none;
+  float: right;
+
+  li {
+  }
+}
+
+#main {
+  @include prefix(3);
+  @include full;
+}

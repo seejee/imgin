@@ -1,12 +1,10 @@
-.navbar
-  %a.brand Imgin
-  .nav
-    %ul
-      %li
-        %a
-          About
-      %li
-        - if current_user == nil 
-          =link_to "Github", login_path 
-        - else
-          =link_to "Sign out", logout_path
+%h1 Imgin
+.nav
+  %ul.nav-items
+    %li
+      %a About
+    %li
+      - if current_user == nil 
+        =link_to "Github", login_path 
+      - else
+        =link_to "Sign out", logout_path

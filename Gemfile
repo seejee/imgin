@@ -42,6 +42,7 @@ group :assets do
   gem 'compass',      '~> 0.12.rc.1'
   gem 'compass-rails'
   gem 'compass-h5bp'
+  gem 'compass-susy-plugin'
 end
 
 ###############
