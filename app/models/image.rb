@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  validates_presence_of :decription, :filename
+  validates_presence_of :description, :file
   belongs_to :user
-  mount_uploader :filename, ImageUploader
+  mount_uploader :file, ImageUploader
 end

@@ -1,0 +1,15 @@
+= form_for @image, html: {multipart: true} do |f|
+  = f.hidden_field :user_id
+
+  %p
+    = f.label        :description, "Description"
+    %br
+    = f.text_field   :description
+
+  %p
+    = f.label        :file, "File"
+    %br
+    = f.file_field   :file
+
+  %p
+    = f.submit
