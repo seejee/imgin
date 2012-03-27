@@ -5,4 +5,7 @@ Imgin::Application.routes.draw do
   match '/logout'                       => 'sessions#destroy', as: 'logout'
   match "/auth/:provider/callback", :to => "sessions#create"
   match "/auth/failure",            :to => "sessions#failure"
+
+  match "/dashboard", :to => "dashboard#index"
+  resources :images
 end

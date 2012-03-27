@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :images
+
   def self.find_or_create_from_omni_auth(omni_auth)
     args = {
       :name        => omni_auth[:info][:name],
@@ -7,7 +9,6 @@ class User < ActiveRecord::Base
       :github_uid  => omni_auth[:uid].to_s,
     }
 
-    user = find_by_github_uid(args[:github_uid])
-    user || create(args)
+    find_by_github_uid(args[:github_uid]) || create(args)
   end
 end
