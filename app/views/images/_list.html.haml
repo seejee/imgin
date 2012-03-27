@@ -1,0 +1,4 @@
+- @images.each do |i|
+  = link_to i.description, i.file.url
+  = image_tag i.file.url(:thumb)
+  %br
